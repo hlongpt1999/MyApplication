@@ -24,4 +24,31 @@
     <string name="invalid_action">Invalid intent received: %s</string>
     <string name="msg_hide_app">Hide app</string>
     <string name="msg_change_language">Change language</string>
+    <string name="msg_pairing">Pairing</string>
+    <string name="msg_start_server">Start Server</string>
+    <string name="notification_channel_adb_pairing">Wireless debugging pairing</string>
+    <!-- Notification -->
+    <string name="notification_channel_service_status">Service start status</string>
+    <string name="notification_service_starting">Shizuku service is starting…</string>
+    <string name="notification_service_start_failed">Start Shizuku service failed.</string>
+    <string name="notification_service_start_no_root">Failed to request root permission.</string>
+    <string name="notification_working">Working…</string>
+    <string name="notification_adb_pairing_input_paring_code">Enter pairing code</string>
+    <string name="notification_adb_pairing_searching_for_service_title">Searching for pairing service</string>
+    <string name="notification_adb_pairing_service_found_title">Pairing service found</string>
+    <string name="notification_adb_pairing_stop_searching">Stop searching</string>
+    <string name="notification_adb_pairing_working_title">Pairing in progress</string>
+    <string name="notification_adb_pairing_succeed_title">Pairing successful</string>
+    <string name="notification_adb_pairing_succeed_text">You can start Shizuku service now.</string>
+    <string name="notification_adb_pairing_failed_title">Pairing failed</string>
+    <string name="notification_adb_pairing_retry">Retry</string>
+    <string name="paring_code_is_wrong">Pairing code is wrong.</string>
+    <string name="cannot_connect_port">Can\'t connect to wireless debugging service.</string>
+    <string name="adb_error_key_store">Unable to generate key for wireless debugging.\nThis may be because KeyStore mechanism of this device is broken.</string>
+    <string name="adb_pair_required">Please go through the pairing step first.</string>
+    <string name="dialog_adb_pairing_paring_code">Pairing code</string>
+    <string name="permission_group_description" translatable="false">@string/permission_label</string>
+    <string name="permission_label">access Focus On</string>
+    <string name="permission_description">Allow the app to use Focus On.</string>
+
 </resources>

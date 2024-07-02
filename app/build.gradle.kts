@@ -53,6 +53,9 @@ android {
 }
 
 dependencies {
+    implementation(libs.conscrypt.android)
+    implementation(libs.core.ktx)
+    implementation(libs.bcpkix.jdk15on)
     implementation(libs.xxpermissions)
     implementation(libs.easywindow)
     implementation(libs.client)

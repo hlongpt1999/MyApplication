@@ -9,6 +9,39 @@
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE_SPECIAL_USE" />
     <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+    <uses-permission android:name="android.permission.READ_PROP" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="moe.shizuku.manager.permission.MANAGER" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+    <uses-permission
+        android:name="moe.shizuku.manager.permission.API_V23"
+        tools:node="remove" />
+
+    <uses-feature
+        android:name="android.software.leanback"
+        android:required="false" />
+    <uses-feature
+        android:name="android.hardware.touchscreen"
+        android:required="false" />
+
+<!--    <permission-group-->
+<!--        android:name="moe.shizuku.manager.permission-group.API"-->
+<!--        android:description="@string/permission_group_description"-->
+<!--        android:icon="@drawable/ic_system_icon"-->
+<!--        android:label="@string/permission_group_label" />-->
+
+    <permission
+        android:name="moe.shizuku.manager.permission.MANAGER"
+        android:protectionLevel="signature" />
+    <permission
+        android:name="moe.shizuku.manager.permission.API_V23"
+        android:description="@string/permission_description"
+        android:icon="@drawable/ic_system_icon"
+        android:label="@string/permission_label"
+        android:permissionGroup="moe.shizuku.manager.permission-group.API"
+        android:protectionLevel="dangerous" />
 
     <queries>
         <intent>
@@ -27,6 +60,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MyApplication"
         tools:targetApi="31">
+        <activity
+            android:name=".feature.pairing.AdbPairingActivity"
+            android:exported="false" />
         <activity
             android:name=".HomeActivity"
             android:configChanges="locale|orientation"

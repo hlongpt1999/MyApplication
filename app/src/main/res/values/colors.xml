@@ -9,4 +9,5 @@
     <color name="white">#FFFFFFFF</color>
     <color name="light_grey">#d1d1d1</color>
     <color name="blue">#0092CC</color>
+    <color name="notification">#3F51B5</color>
 </resources>

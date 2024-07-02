@@ -1,9 +1,13 @@
 [versions]
 agp = "8.5.0"
+bcpkixJdk15on = "1.70"
 client = "master-SNAPSHOT"
+conscryptOpenjdk = "2.5.2"
 core = "5.2.2"
+coreKtxVersion = "1.4.1"
 easywindow = "10.6"
 ezxhelper = "2.2.0"
+googleMaterial = "1.7.0"
 konfettiXml = "2.0.4"
 kotlin = "1.9.0"
 coreKtx = "1.10.1"
@@ -30,8 +34,12 @@ xxpermissions = "18.63"
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
 api = { module = "dev.rikka.shizuku:api", version.ref = "shizukuVersion" }
+bcpkix-jdk15on = { module = "org.bouncycastle:bcpkix-jdk15on", version.ref = "bcpkixJdk15on" }
 client = { module = "com.github.heruoxin.Delegated-Scopes-Manager:client", version.ref = "client" }
+conscrypt-android = { module = "org.conscrypt:conscrypt-android", version.ref = "conscryptOpenjdk" }
+conscrypt-openjdk = { module = "org.conscrypt:conscrypt-openjdk", version.ref = "conscryptOpenjdk" }
 core = { module = "com.github.topjohnwu.libsu:core", version.ref = "core" }
+core-ktx = { module = "dev.rikka.rikkax.core:core-ktx", version.ref = "coreKtxVersion" }
 easywindow = { module = "com.github.getActivity:EasyWindow", version.ref = "easywindow" }
 ezxhelper = { module = "com.github.kyuubiran:EzXHelper", version.ref = "ezxhelper" }
 junit = { group = "junit", name = "junit", version.ref = "junit" }
@@ -54,6 +62,7 @@ androidx-constraintlayout = { group = "androidx.constraintlayout", name = "const
 androidx-navigation-fragment-ktx = { group = "androidx.navigation", name = "navigation-fragment-ktx", version.ref = "navigationFragmentKtx" }
 androidx-navigation-ui-ktx = { group = "androidx.navigation", name = "navigation-ui-ktx", version.ref = "navigationUiKtx" }
 material-v1120 = { module = "com.google.android.material:material", version.ref = "materialVersion" }
+material-v170 = { module = "com.google.android.material:material", version.ref = "googleMaterial" }
 once = { module = "com.jonathanfinerty.once:once", version.ref = "once" }
 provider = { module = "dev.rikka.shizuku:provider", version.ref = "shizukuVersion" }
 androidx-activity = { group = "androidx.activity", name = "activity", version.ref = "activity" }

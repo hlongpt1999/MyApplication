@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Tiêu điểm của tôi</string>
+    <!-- Các chuỗi được sử dụng cho các đoạn để điều hướng -->
+    <string name="first_fragment_label">Đoạn đầu tiên</string>
+    <string name="second_fragment_label">Đoạn thứ hai</string>
+    <string name="next">Tiếp theo</string>
+    <string name="previous">Trước</string>
+    <string name="shizuku_hidden_api_error">Không thể ẩn ứng dụng: Không thể truy cập API IPackageManager.</string>
+    <string name="shizuku_pre_v11">Phiên bản Shizuku không được hỗ trợ: Pre-v11. Vui lòng cài đặt Shizuku v11 trở lên.</string>
+    <string name="shizuku_service_not_running">Shizuku: Dịch vụ không chạy.</string>
+    <string name="shizuku_permission_denied">Shizuku: Quyền bị từ chối</string>
+    <string name="shizuku_not_working">Shizuku: Dịch vụ không khả dụng. Bạn đã cài đặt Shizuku/Sui trên thiết bị của mình chưa?</string>
+    <string name="apphider_not_ava_title">Chế độ ẩn ứng dụng không khả dụng</string>
+    <string name="ok">Được</string>
+    <string name="help">Trợ giúp</string>
+    <string name="common_error_doc_url">https://deltazefiro.github.io/Amarok-doc/en-US/hideapp.html#common-errors</string>
+    <string name="hidden_toast">Ẩn. Cock-a-doodle-do~!</string>
+    <string name="unhidden_toast">Đã hiển thị thành công.</string>
+    <string name="notification_channel_name">Dịch vụ ẩn nhanh</string>
+    <string name="unhide">Bỏ ẩn</string>
+    <string name="hide">Ẩn</string>
+    <string name="quick_hide_notification_title">Quyền riêng tư không bị ẩn</string>
+    <string name="quick_hide_notification_content">Quyền riêng tư của bạn không bị ẩn. Bấm để ẩn.</string>
+    <string name="invalid_action">Đã nhận được ý định không hợp lệ: %s</string>
+    <string name="msg_hide_app">Ẩn ứng dụng</string>
+    <string name="msg_change_language">Thay đổi ngôn ngữ</string>
+</resources>

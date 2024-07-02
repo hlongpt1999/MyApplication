@@ -1,0 +1,27 @@
+<resources>
+    <string name="app_name">My Focus</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+    <string name="shizuku_hidden_api_error">Could not hide app: Could not access IPackageManager API.</string>
+    <string name="shizuku_pre_v11">Unsupported Shizuku version: Pre-v11. Please install Shizuku v11 or later.</string>
+    <string name="shizuku_service_not_running">Shizuku: Service not running.</string>
+    <string name="shizuku_permission_denied">Shizuku: Permission denied</string>
+    <string name="shizuku_not_working">Shizuku: Service unavailable. Have you installed Shizuku/Sui on your device?</string>
+    <string name="apphider_not_ava_title">Unavailable hide-app mode</string>
+    <string name="ok">OK</string>
+    <string name="help">Help</string>
+    <string name="common_error_doc_url">https://deltazefiro.github.io/Amarok-doc/en-US/hideapp.html#common-errors</string>
+    <string name="hidden_toast">Hidden. Cock-a-doodle-do~!</string>
+    <string name="unhidden_toast">Unhidden successful.</string>
+    <string name="notification_channel_name">Quick Hide Service</string>
+    <string name="unhide">Unhide</string>
+    <string name="hide">Hide</string>
+    <string name="quick_hide_notification_title">Privacy not hidden</string>
+    <string name="quick_hide_notification_content">Your privacy is not hidden. Click to hide.</string>
+    <string name="invalid_action">Invalid intent received: %s</string>
+    <string name="msg_hide_app">Hide app</string>
+    <string name="msg_change_language">Change language</string>
+</resources>

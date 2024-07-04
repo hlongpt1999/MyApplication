@@ -170,13 +170,18 @@ class AdbPairingService : Service() {
                 return@launch
             }
 
+            Log.d("Test action", "Started")
             AdbPairingClient(host, port, code, key).runCatching {
+                Log.d("Test action", "Run Catching")
                 start()
             }.onFailure {
+                Log.d("Test action", "onFailure")
                 handleResult(false, it)
             }.onSuccess {
+                Log.d("Test action", "onSuccess")
                 handleResult(it, null)
             }
+            Log.d("Test action", "Done")
         }
 
         return workingNotification

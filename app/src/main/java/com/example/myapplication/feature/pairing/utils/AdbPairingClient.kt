@@ -182,14 +182,17 @@ class AdbPairingClient(private val host: String, private val port: Int, private 
     private var state: State = State.Ready
 
     fun start(): Boolean {
+        Log.d("Test action", "-Chạy r nè")
         setupTlsConnection()
 
+        Log.d("Test action", "-setupTlsConnection")
         state = State.ExchangingMsgs
 
         if (!doExchangeMsgs()) {
             state = State.Stopped
             return false
         }
+        Log.d("Test action", "-doExchangeMsgs")
 
         state = State.ExchangingPeerInfo
 
@@ -197,8 +200,10 @@ class AdbPairingClient(private val host: String, private val port: Int, private 
             state = State.Stopped
             return false
         }
+        Log.d("Test action", "-doExchangePeerInfo")
 
         state = State.Stopped
+        Log.d("Test action", "-state = $state")
         return true
     }
 
@@ -210,19 +215,28 @@ class AdbPairingClient(private val host: String, private val port: Int, private 
         val sslSocket = sslContext.socketFactory.createSocket(socket, host, port, true) as SSLSocket
         sslSocket.startHandshake()
         Log.d(TAG, "Handshake succeeded.")
+        Log.d("Test action", " + Handshake succeeded.")
 
         inputStream = DataInputStream(sslSocket.inputStream)
+        Log.d("Test action", " + Data input succeeded.")
         outputStream = DataOutputStream(sslSocket.outputStream)
+        Log.d("Test action", " + Data output succeeded.")
 
         val pairCodeBytes = pairCode.toByteArray()
-        val keyMaterial = Conscrypt.exportKeyingMaterial(sslSocket, kExportedKeyLabel, null, kExportedKeySize)
-        val passwordBytes = ByteArray(pairCode.length + keyMaterial.size)
-        pairCodeBytes.copyInto(passwordBytes)
-        keyMaterial.copyInto(passwordBytes, pairCodeBytes.size)
-
-        val pairingContext = PairingContext.create(passwordBytes)
-        checkNotNull(pairingContext) { "Unable to create PairingContext." }
-        this.pairingContext = pairingContext
+        try {
+            val keyMaterial =
+                Conscrypt.exportKeyingMaterial(sslSocket, kExportedKeyLabel, null, kExportedKeySize)
+            val passwordBytes = ByteArray(pairCode.length + keyMaterial.size)
+            pairCodeBytes.copyInto(passwordBytes)
+            keyMaterial.copyInto(passwordBytes, pairCodeBytes.size)
+            Log.d("Test action", " + Copy Into succeeded.")
+            val pairingContext = PairingContext.create(passwordBytes)
+            checkNotNull(pairingContext) { "Unable to create PairingContext." }
+            Log.d("Test action", " + Pairing context = $pairingContext.")
+            this.pairingContext = pairingContext
+        } catch (e: Exception) {
+            e.printStackTrace()
+        }
     }
 
     private fun createHeader(type: PairingPacketHeader.Type, payloadSize: Int): PairingPacketHeader {

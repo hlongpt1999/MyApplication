@@ -3,27 +3,36 @@ package com.example.myapplication
 import android.app.Activity
 import android.content.Intent
 import android.content.res.Configuration
+import android.graphics.Typeface
 import android.net.Uri
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
+import android.widget.TextView
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.FragmentActivity
+import androidx.lifecycle.lifecycleScope
 import com.example.myapplication.databinding.ActivityHomeBinding
 import com.example.myapplication.feature.hide.HideAppActivity
 import com.example.myapplication.feature.pairing.AdbPairingActivity
 import com.example.myapplication.feature.pairing.StarterActivity
 import com.example.myapplication.feature.pairing.utils.EnvironmentUtils
+import com.example.myapplication.feature.pairing.utils.Starter
 import com.example.myapplication.helper.BaseHideApp
 import com.example.myapplication.helper.CustomHideAppHelper
 import com.example.myapplication.helper.NoneHideAppHelper
 import com.example.myapplication.utilsjava.PrefMgr
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 import rikka.core.content.asActivity
 import java.util.Locale
 
 
-class HomeActivity : Activity(), View.OnClickListener, BaseHideApp.ActivationCallbackListener {
+class HomeActivity : AppCompatActivity(), View.OnClickListener, BaseHideApp.ActivationCallbackListener {
 
     private lateinit var binding: ActivityHomeBinding
 
@@ -60,6 +69,7 @@ class HomeActivity : Activity(), View.OnClickListener, BaseHideApp.ActivationCal
         super.onCreate(savedInstanceState)
         binding = ActivityHomeBinding.inflate(LayoutInflater.from(this))
         setContentView(binding.root)
+        writeStarterFiles()
         initEvent()
     }
 
@@ -71,9 +81,9 @@ class HomeActivity : Activity(), View.OnClickListener, BaseHideApp.ActivationCal
     }
 
     private fun changeLanguage(languageCode: String) {
-        val locale: Locale = Locale(languageCode)
+        val locale = Locale(languageCode)
         Locale.setDefault(locale)
-        val config: Configuration = Configuration()
+        val config = Configuration()
         config.locale = locale
         resources.updateConfiguration(config, resources.displayMetrics)
 
@@ -82,6 +92,31 @@ class HomeActivity : Activity(), View.OnClickListener, BaseHideApp.ActivationCal
 
         // Optionally, you can show a toast or message to indicate language change
         Toast.makeText(this, "Language changed to $languageCode", Toast.LENGTH_SHORT).show()
+    }
+
+    private fun writeStarterFiles() {
+        lifecycleScope.launch(Dispatchers.IO) {
+            try {
+                Starter.writeSdcardFiles(applicationContext)
+            } catch (e: Throwable) {
+                withContext(Dispatchers.Main) {
+                    MaterialAlertDialogBuilder(this@HomeActivity)
+                        .setTitle("Cannot write files")
+                        .setMessage(Log.getStackTraceString(e))
+                        .setPositiveButton(android.R.string.ok, null)
+                        .create()
+                        .apply {
+                            setOnShowListener {
+                                this.findViewById<TextView>(android.R.id.message)!!.apply {
+                                    typeface = Typeface.MONOSPACE
+                                    setTextIsSelectable(true)
+                                }
+                            }
+                        }
+                        .show()
+                }
+            }
+        }
     }
 
     override fun onActivateCallback(

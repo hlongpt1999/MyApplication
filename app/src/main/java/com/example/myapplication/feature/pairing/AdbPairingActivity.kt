@@ -1,5 +1,6 @@
 package com.example.myapplication.feature.pairing
 
+import android.annotation.SuppressLint
 import android.app.Activity
 import android.app.AppOpsManager
 import android.app.ForegroundServiceStartNotAllowedException
@@ -25,6 +26,7 @@ class AdbPairingActivity : Activity() {
     private lateinit var binding: ActivityAdbPairingBinding
     private var notificationEnabled: Boolean = false
 
+    @SuppressLint("SuspiciousIndentation")
     @RequiresApi(Build.VERSION_CODES.O)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -38,25 +40,23 @@ class AdbPairingActivity : Activity() {
         }
 
         binding.apply {
+            developerOptions.setOnClickListener {
+                val intent = Intent(Settings.ACTION_APPLICATION_DEVELOPMENT_SETTINGS)
+                intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+                try {
+                    startActivity(intent)
+                } catch (_: ActivityNotFoundException) {
+                }
+            }
 
-            //todo:
-//            developerOptions.setOnClickListener {
-//                val intent = Intent(Settings.ACTION_APPLICATION_DEVELOPMENT_SETTINGS)
-//                intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
-//                try {
-//                    context.startActivity(intent)
-//                } catch (e: ActivityNotFoundException) {
-//                }
-//            }
-//
-//            notificationOptions.setOnClickListener {
-//                val intent = Intent(Settings.ACTION_APP_NOTIFICATION_SETTINGS)
-//                intent.putExtra(Settings.EXTRA_APP_PACKAGE, context.packageName)
-//                try {
-//                    context.startActivity(intent)
-//                } catch (e: ActivityNotFoundException) {
-//                }
-//            }
+            notificationOptions.setOnClickListener {
+                val intent = Intent(Settings.ACTION_APP_NOTIFICATION_SETTINGS)
+                intent.putExtra(Settings.EXTRA_APP_PACKAGE, packageName)
+                try {
+                    startActivity(intent)
+                } catch (e: ActivityNotFoundException) {
+                }
+            }
         }
     }
 

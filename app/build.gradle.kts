@@ -5,18 +5,22 @@ plugins {
 
 android {
     namespace = "com.example.myapplication"
-    compileSdk = 34
+    compileSdk = 33
 
     defaultConfig {
         applicationId = "com.example.myapplication"
         minSdk = 24
-        targetSdk = 34
+        targetSdk = 33
         versionCode = 1
         versionName = "1.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         vectorDrawables {
             useSupportLibrary = true
+        }
+        compileOptions {
+            sourceCompatibility = JavaVersion.VERSION_17
+            targetCompatibility = JavaVersion.VERSION_17
         }
         resConfigs ("vi", "en")
     }
@@ -53,6 +57,7 @@ android {
 }
 
 dependencies {
+    implementation(libs.lifecycle.resource.livedata)
     implementation(libs.conscrypt.android)
     implementation(libs.core.ktx)
     implementation(libs.bcpkix.jdk15on)
@@ -90,4 +95,5 @@ dependencies {
     androidTestImplementation(libs.androidx.ui.test.junit4)
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
+    compileOnly(libs.stub)
 }

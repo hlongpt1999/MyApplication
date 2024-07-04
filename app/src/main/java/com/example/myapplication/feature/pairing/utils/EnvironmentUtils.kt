@@ -4,6 +4,7 @@ import android.app.UiModeManager
 import android.content.Context
 import android.content.res.Configuration
 import java.io.File
+import android.os.SystemProperties
 
 object EnvironmentUtils {
 

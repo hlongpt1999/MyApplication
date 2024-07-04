@@ -2,7 +2,6 @@ package com.example.myapplication.feature.pairing.utils;
 
 import static java.lang.annotation.RetentionPolicy.SOURCE;
 
-import android.app.ActivityThread;
 import android.content.Context;
 import android.content.ContextWrapper;
 import android.content.SharedPreferences;
@@ -13,10 +12,12 @@ import androidx.annotation.IntDef;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatDelegate;
 
+import com.example.myapplication.HiddenApplication;
 import com.example.myapplication.utilsjava.EmptySharedPreferencesImpl;
 
 import java.lang.annotation.Retention;
 import java.util.Locale;
+import java.util.Objects;
 
 public class ShizukuSettings {
 
@@ -86,7 +87,7 @@ public class ShizukuSettings {
     @AppCompatDelegate.NightMode
     public static int getNightMode() {
         int defValue = AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM;
-        if (EnvironmentUtils.isWatch(ActivityThread.currentActivityThread().getApplication())) {
+        if (EnvironmentUtils.isWatch(Objects.requireNonNull(HiddenApplication.Companion.getAppContext()))) {
             defValue = AppCompatDelegate.MODE_NIGHT_YES;
         }
         return getPreferences().getInt(NIGHT_MODE, defValue);

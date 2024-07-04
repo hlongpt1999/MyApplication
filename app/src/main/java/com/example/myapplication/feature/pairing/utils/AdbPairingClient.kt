@@ -3,6 +3,7 @@ package moe.shizuku.manager.adb
 import android.os.Build
 import android.util.Log
 import androidx.annotation.RequiresApi
+import com.android.org.conscrypt.Conscrypt
 import com.example.myapplication.feature.pairing.utils.AdbInvalidPairingCodeException
 import com.example.myapplication.feature.pairing.utils.AdbKey
 import java.io.Closeable
@@ -12,7 +13,6 @@ import java.net.Socket
 import java.nio.ByteBuffer
 import java.nio.ByteOrder
 import javax.net.ssl.SSLSocket
-import org.conscrypt.Conscrypt
 
 private const val TAG = "AdbPairClient"
 

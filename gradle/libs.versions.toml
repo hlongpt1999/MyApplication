@@ -1,33 +1,50 @@
 [versions]
 agp = "8.5.0"
 bcpkixJdk15on = "1.70"
+borderview = "1.1.0"
+boringssl = "2.1"
 client = "master-SNAPSHOT"
+compatibility = "2.0.0"
 conscryptOpenjdk = "2.5.2"
 core = "5.2.2"
 coreKtxVersion = "1.4.1"
+cxx = "1.2.0"
+devAppcompat = "1.6.1"
+devMaterial = "2.7.0"
 easywindow = "10.6"
 ezxhelper = "2.2.0"
 googleMaterial = "1.7.0"
+htmlKtx = "1.1.2"
+insets = "1.3.0"
 konfettiXml = "2.0.4"
 kotlin = "1.9.0"
 coreKtx = "1.10.1"
 junit = "4.13.2"
 junitVersion = "1.1.5"
 espressoCore = "3.5.1"
+layoutinflater = "1.3.0"
+lifecycleResourceLivedata = "1.0.1"
 lifecycleRuntimeKtx = "2.6.1"
 activityCompose = "1.8.0"
 composeBom = "2024.04.01"
+lifecycleSharedViewmodel = "1.0.1"
+lifecycleViewmodelLazy = "2.0.0"
 material = "1.10.0"
 appcompat = "1.6.1"
 constraintlayout = "2.1.4"
+materialPreference = "2.0.0"
 materialVersion = "1.12.0"
 navigationFragmentKtx = "2.6.0"
 navigationUiKtx = "2.6.0"
 once = "1.3.1"
+recyclerviewAdapter = "1.3.0"
+recyclerviewKtx = "1.3.2"
 shizukuVersion = "13.1.5"
-activity = "1.9.0"
+activity = "1.8.0"
 lifecycleService = "2.8.2"
+simplemenuPreference = "1.0.3"
 spotlight = "2.0.5"
+stub = "4.3.3"
 view = "2.4.1"
 xxpermissions = "18.63"
 
@@ -35,13 +52,21 @@ xxpermissions = "18.63"
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
 api = { module = "dev.rikka.shizuku:api", version.ref = "shizukuVersion" }
 bcpkix-jdk15on = { module = "org.bouncycastle:bcpkix-jdk15on", version.ref = "bcpkixJdk15on" }
+borderview = { module = "dev.rikka.rikkax.widget:borderview", version.ref = "borderview" }
+boringssl = { module = "io.github.vvb2060.ndk:boringssl", version.ref = "boringssl" }
 client = { module = "com.github.heruoxin.Delegated-Scopes-Manager:client", version.ref = "client" }
+compatibility = { module = "dev.rikka.rikkax.compatibility:compatibility", version.ref = "compatibility" }
 conscrypt-android = { module = "org.conscrypt:conscrypt-android", version.ref = "conscryptOpenjdk" }
 conscrypt-openjdk = { module = "org.conscrypt:conscrypt-openjdk", version.ref = "conscryptOpenjdk" }
 core = { module = "com.github.topjohnwu.libsu:core", version.ref = "core" }
 core-ktx = { module = "dev.rikka.rikkax.core:core-ktx", version.ref = "coreKtxVersion" }
+cxx = { module = "dev.rikka.ndk.thirdparty:cxx", version.ref = "cxx" }
+dev-appcompat = { module = "dev.rikka.rikkax.appcompat:appcompat", version.ref = "devAppcompat" }
+dev-material = { module = "dev.rikka.rikkax.material:material", version.ref = "devMaterial" }
 easywindow = { module = "com.github.getActivity:EasyWindow", version.ref = "easywindow" }
 ezxhelper = { module = "com.github.kyuubiran:EzXHelper", version.ref = "ezxhelper" }
+html-ktx = { module = "dev.rikka.rikkax.html:html-ktx", version.ref = "htmlKtx" }
+insets = { module = "dev.rikka.rikkax.insets:insets", version.ref = "insets" }
 junit = { group = "junit", name = "junit", version.ref = "junit" }
 androidx-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }
 androidx-espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espressoCore" }
@@ -56,18 +81,27 @@ androidx-ui-test-manifest = { group = "androidx.compose.ui", name = "ui-test-man
 androidx-ui-test-junit4 = { group = "androidx.compose.ui", name = "ui-test-junit4" }
 androidx-material3 = { group = "androidx.compose.material3", name = "material3" }
 konfetti-xml = { module = "nl.dionsegijn:konfetti-xml", version.ref = "konfettiXml" }
+layoutinflater = { module = "dev.rikka.rikkax.layoutinflater:layoutinflater", version.ref = "layoutinflater" }
+lifecycle-resource-livedata = { module = "dev.rikka.rikkax.lifecycle:lifecycle-resource-livedata", version.ref = "lifecycleResourceLivedata" }
+lifecycle-shared-viewmodel = { module = "dev.rikka.rikkax.lifecycle:lifecycle-shared-viewmodel", version.ref = "lifecycleSharedViewmodel" }
+lifecycle-viewmodel-lazy = { module = "dev.rikka.rikkax.lifecycle:lifecycle-viewmodel-lazy", version.ref = "lifecycleViewmodelLazy" }
 material = { group = "com.google.android.material", name = "material", version.ref = "material" }
 androidx-appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appcompat" }
 androidx-constraintlayout = { group = "androidx.constraintlayout", name = "constraintlayout", version.ref = "constraintlayout" }
 androidx-navigation-fragment-ktx = { group = "androidx.navigation", name = "navigation-fragment-ktx", version.ref = "navigationFragmentKtx" }
 androidx-navigation-ui-ktx = { group = "androidx.navigation", name = "navigation-ui-ktx", version.ref = "navigationUiKtx" }
+material-preference = { module = "dev.rikka.rikkax.material:material-preference", version.ref = "materialPreference" }
 material-v1120 = { module = "com.google.android.material:material", version.ref = "materialVersion" }
 material-v170 = { module = "com.google.android.material:material", version.ref = "googleMaterial" }
 once = { module = "com.jonathanfinerty.once:once", version.ref = "once" }
 provider = { module = "dev.rikka.shizuku:provider", version.ref = "shizukuVersion" }
 androidx-activity = { group = "androidx.activity", name = "activity", version.ref = "activity" }
 androidx-lifecycle-service = { group = "androidx.lifecycle", name = "lifecycle-service", version.ref = "lifecycleService" }
+recyclerview-adapter = { module = "dev.rikka.rikkax.recyclerview:recyclerview-adapter", version.ref = "recyclerviewAdapter" }
+recyclerview-ktx = { module = "dev.rikka.rikkax.recyclerview:recyclerview-ktx", version.ref = "recyclerviewKtx" }
+simplemenu-preference = { module = "dev.rikka.rikkax.preference:simplemenu-preference", version.ref = "simplemenuPreference" }
 spotlight = { module = "com.github.takusemba:spotlight", version.ref = "spotlight" }
+stub = { module = "dev.rikka.hidden:stub", version.ref = "stub" }
 view = { module = "com.kizitonwose.calendar:view", version.ref = "view" }
 xxpermissions = { module = "com.github.getActivity:XXPermissions", version.ref = "xxpermissions" }
 
